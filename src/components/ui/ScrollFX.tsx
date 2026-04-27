@@ -47,12 +47,16 @@ export default function ScrollFX() {
       const dt = Math.max(1, now - lastT.current);
       const speed = Math.abs(dy / dt) * 1000; // px/sec
 
-      if (now - cooldown.current < 240) {
+      if (now - cooldown.current < 700) {
         lastY.current = window.scrollY;
         lastT.current = now;
         return;
       }
-      cooldown.current = now;
+      if (Math.abs(dy) < 70) {
+        lastY.current = window.scrollY;
+        lastT.current = now;
+        return;
+      }
 
       let pool = SLOW_WORDS;
       let size = 28;
@@ -62,11 +66,23 @@ export default function ScrollFX() {
       } else if (speed > 700) {
         pool = MID_WORDS;
         size = 44;
-      } else if (speed < 200) {
+      } else if (speed < 260) {
         lastY.current = window.scrollY;
         lastT.current = now;
         return;
       }
+
+      // Reduce overall visual noise:
+      // - low speed: rare
+      // - medium speed: occasional
+      // - high speed: frequent but not constant
+      const spawnChance = speed > 1800 ? 0.55 : speed > 700 ? 0.32 : 0.18;
+      if (Math.random() > spawnChance) {
+        lastY.current = window.scrollY;
+        lastT.current = now;
+        return;
+      }
+      cooldown.current = now;
 
       const word = pool[Math.floor(Math.random() * pool.length)];
       const fromRight = Math.random() > 0.5;
@@ -81,7 +97,7 @@ export default function ScrollFX() {
         color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
         size,
       };
-      setItems((s) => [...s, item]);
+      setItems((s) => [...s.slice(-1), item]);
       window.setTimeout(() => {
         setItems((s) => s.filter((x) => x.id !== item.id));
       }, 1300);

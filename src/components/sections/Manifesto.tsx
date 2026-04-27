@@ -53,9 +53,9 @@ export default function Manifesto() {
           </h2>
         </div>
         <div className="max-w-md font-serif text-base text-[#3d362a] leading-snug">
-          A research blog you can <em>read like a comic</em>, but with the
-          depth and footnotes of a Gwern essay. Dense pages, generous
-          margins, no spoon-feeding.
+          A research blog you can <em>read like a comic</em>, but with
+          technical depth, citations, and real argument density. Dense
+          pages, generous margins, no spoon-feeding.
         </div>
       </div>
 

@@ -44,12 +44,10 @@ function FeaturedIssue() {
               THE <span className="hl-r">KERNEL.</span>
             </h2>
             <p className="mt-4 max-w-2xl font-serif text-lg leading-snug">
-              Twenty-eight minutes on the agent-native operating system: why
-              user space is dying, why memory becomes a knowledge fabric, and
-              the three open frontiers: semantic firewalls, cognitive garbage
-              collection, and an economic scheduler that prices intelligence
-              per dollar at the kernel level. Footnotes, marginalia, and the
-              occasional <em>POW!</em>
+              Thirty minutes on the agent-native operating system: why
+              sandboxes became a tax, why memory is becoming a knowledge
+              fabric, and why the next Windows moment arrives without
+              a window.
             </p>
           </div>
           <div className="col-span-12 lg:col-span-4 flex flex-col gap-3 lg:items-end">
@@ -60,7 +58,7 @@ function FeaturedIssue() {
               READ THE ISSUE →
             </Link>
             <div className="font-mono text-xs uppercase tracking-[0.3em] opacity-70">
-              28 min · 13 footnotes · 1 ghost
+              30 min · deep notes · 1 ghost
             </div>
           </div>
         </div>
