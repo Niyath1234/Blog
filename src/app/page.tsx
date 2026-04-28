@@ -5,21 +5,18 @@ import Manifesto from "@/components/sections/Manifesto";
 
 const ScrollFX = dynamic(() => import("@/components/ui/ScrollFX"));
 const Sidekick = dynamic(() => import("@/components/ui/Sidekick"));
-const PageTilt = dynamic(() => import("@/components/ui/PageTilt"));
 
 export default function Home() {
   return (
     <>
       <ScrollFX />
       <Sidekick />
-      <PageTilt>
-        <main className="min-h-screen">
-          <Hero />
-          <Manifesto />
-          <FeaturedIssue />
-          <Footer />
-        </main>
-      </PageTilt>
+      <main className="min-h-screen">
+        <Hero />
+        <Manifesto />
+        <FeaturedIssue />
+        <Footer />
+      </main>
     </>
   );
 }

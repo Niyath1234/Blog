@@ -172,58 +172,60 @@ export default function Hero() {
             const isActive = s.id === active;
             const live = s.id === "kernel" || s.id === "graphs";
             return (
-              <motion.div
+              <Link
                 key={s.id}
+                href={SLUG[s.id]}
                 onMouseEnter={() => setActive(s.id)}
                 onFocus={() => setActive(s.id)}
-                initial={{ opacity: 0, y: 20, rotate: -2 }}
-                animate={{ opacity: 1, y: 0, rotate: i % 2 ? 1 : -1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 18,
-                  delay: 0.05 + i * 0.06,
-                }}
-                whileHover={{ y: -4, rotate: 0, scale: 1.01 }}
-                className={`panel relative ${ACCENT_BG[s.accent]} p-5 sm:p-6 ${
-                  isActive ? "ring-4 ring-black/20" : ""
-                }`}
+                className="block text-current no-underline"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] opacity-80">
-                      {s.subtitle}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: -2 }}
+                  animate={{ opacity: 1, y: 0, rotate: i % 2 ? 1 : -1 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 18,
+                    delay: 0.05 + i * 0.06,
+                  }}
+                  whileHover={{ y: -4, rotate: 0, scale: 1.01 }}
+                  className={`panel relative ${ACCENT_BG[s.accent]} p-5 sm:p-6 cursor-pointer ${
+                    isActive ? "ring-4 ring-black/20" : ""
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.3em] opacity-80">
+                        {s.subtitle}
+                      </div>
+                      <h3 className="font-display text-3xl sm:text-4xl tracking-wide leading-[0.95] mt-1">
+                        {s.title}
+                      </h3>
                     </div>
-                    <h3 className="font-display text-3xl sm:text-4xl tracking-wide leading-[0.95] mt-1">
-                      {s.title}
-                    </h3>
+                    <div className="font-mono text-[11px] bg-black text-white px-1.5 py-0.5 whitespace-nowrap">
+                      {s.issue}
+                    </div>
                   </div>
-                  <div className="font-mono text-[11px] bg-black text-white px-1.5 py-0.5 whitespace-nowrap">
-                    {s.issue}
-                  </div>
-                </div>
-                <p className="mt-3 text-base font-serif leading-snug">
-                  {s.blurb}
-                </p>
+                  <p className="mt-3 text-base font-serif leading-snug">
+                    {s.blurb}
+                  </p>
 
-                <div className="mt-4 flex items-center justify-between gap-3">
-                  <span
-                    className={`font-display text-sm tracking-widest px-2 py-1 border-2 border-black ${
-                      live
-                        ? "bg-[#ff2d55] text-white"
-                        : "bg-white text-black opacity-70"
-                    }`}
-                  >
-                    {live ? "● LIVE" : "○ DRAFTING"}
-                  </span>
-                  <Link
-                    href={SLUG[s.id]}
-                    className="inline-flex items-center gap-2 px-3 py-2 ink-border bg-white font-display tracking-widest text-base shadow-comic-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-comic transition-transform"
-                  >
-                    {live ? "READ ISSUE" : "PEEK"} →
-                  </Link>
-                </div>
-              </motion.div>
+                  <div className="mt-4 flex items-center justify-between gap-3">
+                    <span
+                      className={`font-display text-sm tracking-widest px-2 py-1 border-2 border-black ${
+                        live
+                          ? "bg-[#ff2d55] text-white"
+                          : "bg-white text-black opacity-70"
+                      }`}
+                    >
+                      {live ? "● LIVE" : "○ DRAFTING"}
+                    </span>
+                    <span className="inline-flex items-center gap-2 px-3 py-2 ink-border bg-white font-display tracking-widest text-base shadow-comic-sm">
+                      {live ? "READ ISSUE" : "PEEK"} →
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
             );
           })}
         </div>
