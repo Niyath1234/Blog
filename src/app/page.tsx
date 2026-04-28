@@ -91,19 +91,19 @@ function Footer() {
               href="/issues/the-memory-leak"
               className="px-2 py-1 border-2 border-[#ff2d55] hover:bg-[#ff2d55] transition-colors"
             >
-              #002 MEMORY
+              #003 MEMORY
             </Link>
             <Link
               href="/issues/silicon-sight"
               className="px-2 py-1 border-2 border-[#00e5ff] hover:bg-[#00e5ff] hover:text-black transition-colors"
             >
-              #003 SIGHT
+              #004 SIGHT
             </Link>
             <Link
-              href="/issues/the-context-web"
+              href="/issues/escaping-flatland"
               className="px-2 py-1 border-2 border-[#14f195] hover:bg-[#14f195] hover:text-black transition-colors"
             >
-              #004 WEB
+              #002 FLATLAND
             </Link>
           </nav>
           <div className="font-mono text-xs uppercase tracking-[0.3em] opacity-70">

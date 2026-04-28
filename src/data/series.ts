@@ -29,6 +29,17 @@ export const SERIES: Series[] = [
     sfx: "BOOT!",
   },
   {
+    id: "graphs",
+    title: "Escaping Flatland",
+    subtitle: "Hyperbolic Context Manifold",
+    blurb:
+      "A new manifold approach for preserving hierarchy, relation, and semantic distance without collapse.",
+    accent: "green",
+    shape: "web",
+    issue: "#002",
+    sfx: "WEAVE!",
+  },
+  {
     id: "memory",
     title: "The Memory Leak",
     subtitle: "Rust • Compilers • Systems",
@@ -36,7 +47,7 @@ export const SERIES: Series[] = [
       "Where ownership rules are religion and the borrow checker is judge, jury and segfault.",
     accent: "red",
     shape: "gear",
-    issue: "#002",
+    issue: "#003",
     sfx: "RUSTY!",
   },
   {
@@ -47,18 +58,7 @@ export const SERIES: Series[] = [
       "A 3D eye with bounding boxes for eyelashes. We taught a sphere to see, and now it judges your code.",
     accent: "cyan",
     shape: "eye",
-    issue: "#003",
-    sfx: "ZOOM!",
-  },
-  {
-    id: "graphs",
-    title: "The Context Web",
-    subtitle: "Knowledge Graphs & High-Dim Data",
-    blurb:
-      "Tensors woven into a spider web. Every node is a meaning, every edge a memory.",
-    accent: "green",
-    shape: "web",
     issue: "#004",
-    sfx: "WEAVE!",
+    sfx: "ZOOM!",
   },
 ];

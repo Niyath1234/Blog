@@ -3,7 +3,7 @@ import Link from "next/link";
 import ComingSoon from "@/components/essay/ComingSoon";
 
 export const metadata: Metadata = {
-  title: "The Memory Leak · Multiverse of Intelligence #002",
+  title: "The Memory Leak · Multiverse of Intelligence #003",
   description:
     "Rust, compilers, systems. Where ownership rules are religion and the borrow checker is judge, jury and segfault.",
 };
@@ -39,7 +39,7 @@ function IssueNav() {
           ← THE MULTIVERSE OF INTELLIGENCE
         </Link>
         <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em]">
-          <span className="text-[#ff2d55]">#002</span>
+          <span className="text-[#ff2d55]">#003</span>
           <span className="hidden md:inline opacity-60">·</span>
           <span className="hidden md:inline">THE MEMORY LEAK</span>
         </div>

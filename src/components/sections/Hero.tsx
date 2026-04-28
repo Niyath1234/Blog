@@ -22,7 +22,7 @@ const SLUG: Record<SeriesId, string> = {
   kernel: "/issues/ghost-in-the-kernel",
   memory: "/issues/the-memory-leak",
   vision: "/issues/silicon-sight",
-  graphs: "/issues/the-context-web",
+  graphs: "/issues/escaping-flatland",
 };
 
 export default function Hero() {
@@ -37,8 +37,8 @@ export default function Hero() {
           {Array.from({ length: 4 }).map((_, i) => (
             <span key={i} className="px-6 inline-flex items-center gap-6">
               <span>★ THE MULTIVERSE OF INTELLIGENCE</span>
-              <span className="text-[#00e5ff]">· ISSUE #001 IS LIVE ·</span>
-              <span>GHOST IN THE KERNEL</span>
+            <span className="text-[#00e5ff]">· ISSUE #001 & #002 ARE LIVE ·</span>
+            <span>GHOST IN THE KERNEL + ESCAPING FLATLAND</span>
               <span className="text-[#ff2d55]">★</span>
               <span>RATED &quot;O&quot; FOR OPUS</span>
               <span className="text-[#00e5ff]">●</span>
@@ -170,7 +170,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {SERIES.map((s, i) => {
             const isActive = s.id === active;
-            const live = s.id === "kernel";
+            const live = s.id === "kernel" || s.id === "graphs";
             return (
               <motion.div
                 key={s.id}

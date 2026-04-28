@@ -1,28 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ComingSoon from "@/components/essay/ComingSoon";
+import dynamic from "next/dynamic";
+import EscapingFlatland from "@/components/essay/EscapingFlatland";
+
+const Sidekick = dynamic(() => import("@/components/ui/Sidekick"));
+const ScrollFX = dynamic(() => import("@/components/ui/ScrollFX"));
 
 export const metadata: Metadata = {
-  title: "The Context Web · Multiverse of Intelligence #004",
+  title: "Escaping Flatland · Multiverse of Intelligence #002",
   description:
-    "Knowledge graphs and high-dimensional data. Tensors woven into a spider web; every node a meaning, every edge a memory.",
+    "The mathematics of a hyperbolic context manifold: complex lifts, Poincare geometry, Mobius message passing, and manifold contrastive optimization.",
 };
 
 export default function Page() {
   return (
     <>
+      <ScrollFX />
+      <Sidekick />
       <IssueNav />
       <main className="min-h-screen pb-10">
-        <ComingSoon
-          seriesId="graphs"
-          teases={[
-            "The collapse of relational schema into latent graphs: how vector indices became the new tables.",
-            "Why retrieval is a graph problem dressed as a similarity problem.",
-            "GraphRAG, hybrid search, LlamaIndex' graph stores: what survives the hype and what doesn't.",
-            "High-dimensional geometry is weird: the curse of dimensionality, the blessing of concentration, and why both are useful.",
-            "An agent's memory fabric as a giant living knowledge graph, with the kernel as gardener.",
-          ]}
-        />
+        <EscapingFlatland />
       </main>
     </>
   );
@@ -39,9 +36,9 @@ function IssueNav() {
           ← THE MULTIVERSE OF INTELLIGENCE
         </Link>
         <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em]">
-          <span className="text-[#14f195]">#004</span>
+          <span className="text-[#14f195]">#002</span>
           <span className="hidden md:inline opacity-60">·</span>
-          <span className="hidden md:inline">THE CONTEXT WEB</span>
+          <span className="hidden md:inline">ESCAPING FLATLAND</span>
         </div>
       </div>
     </nav>

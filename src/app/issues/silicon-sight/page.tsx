@@ -3,7 +3,7 @@ import Link from "next/link";
 import ComingSoon from "@/components/essay/ComingSoon";
 
 export const metadata: Metadata = {
-  title: "Silicon Sight · Multiverse of Intelligence #003",
+  title: "Silicon Sight · Multiverse of Intelligence #004",
   description:
     "Computer vision and image processing. We taught a sphere to see, and now it judges your code.",
 };
@@ -39,7 +39,7 @@ function IssueNav() {
           ← THE MULTIVERSE OF INTELLIGENCE
         </Link>
         <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em]">
-          <span className="text-[#00e5ff]">#003</span>
+          <span className="text-[#00e5ff]">#004</span>
           <span className="hidden md:inline opacity-60">·</span>
           <span className="hidden md:inline">SILICON SIGHT</span>
         </div>

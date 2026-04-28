@@ -31,7 +31,7 @@ export default function Sidekick() {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex items-end gap-2">
+    <div className="fixed bottom-5 right-5 z-30 flex items-end gap-2 pointer-events-none">
       <AnimatePresence mode="wait">
         {open ? (
           <motion.div
@@ -40,7 +40,7 @@ export default function Sidekick() {
             animate={{ opacity: 1, y: 0, scale: 1, rotate: -1 }}
             exit={{ opacity: 0, scale: 0.7 }}
             transition={{ type: "spring", stiffness: 320, damping: 20 }}
-            className="bubble max-w-[260px] px-4 py-3 text-sm leading-snug"
+            className="bubble max-w-[260px] px-4 py-3 text-sm leading-snug pointer-events-auto"
           >
             <span className="font-display tracking-wider text-[#ff2d55] block text-xs mb-0.5">
               SIDEKICK SAYS:
@@ -53,7 +53,7 @@ export default function Sidekick() {
       <button
         aria-label="Toggle sidekick"
         onClick={() => setOpen((o) => !o)}
-        className="relative w-16 h-16 rounded-full ink-border-thick bg-[#ffd400] shadow-comic hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform"
+        className="relative w-16 h-16 rounded-full ink-border-thick bg-[#ffd400] shadow-comic hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform pointer-events-auto"
       >
         {/* Tiny "rusty gear with eyes" face */}
         <div className="absolute inset-0 grid place-items-center">
